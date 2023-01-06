@@ -137,7 +137,7 @@ class CaloriesCalculator(Calculator):
     """
     def get_calories_remained(self) -> str:  # Gets the remaining calories for today
         """Code Review: Get calories calories_remnant
-        1) Type Hint added '-> float' for specifying return
+        1) Type Hint added '-> str' for specifying return
         2) Comment from line 136 should be inside this docstring
         3) Name for variable 'x' is not compliant with standards,
         it should be a representative English word, i.e. calories_remnant
@@ -173,11 +173,11 @@ class CashCalculator(Calculator):
     USD_RATE = float(60)  # US dollar exchange rate.
     EURO_RATE = float(70)  # Euro exchange rate.
 
-    def get_today_cash_remained(self, currency_sel: str):
+    def get_today_cash_remained(self, currency_sel: str) -> str:
         """Code Review: Get cash remnant for today
         1) USD_RATE and EURO_RATE can be accessed through the 'self' command;
         therefore, they can be removed from the method arguments.
-        2) Type hint and expected example for currency
+        2) Type hints and expected example for currency
         3) currency assignment to currency_type is not necessary
         4) The currency string and conversion rate could be better
         handled with a dict of tuples as in the following refactoring.
@@ -198,7 +198,7 @@ class CashCalculator(Calculator):
             currency_sel (str): Currency selection, i.e. "rub", "usd" or "eur"
 
         Returns:
-            string: Notification status for calories cash_remained
+            str: Notification status for calories cash_remained
         """
         currency_types = {
             'rub': (1, 'Rubles'),
